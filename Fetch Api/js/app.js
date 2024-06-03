@@ -4,7 +4,7 @@ converts them to Json and passes the data to displaycountries...and also catches
 */
 async function getCountries(){
     try{
-        const response = await fetch(' https://restcountries.com/v3.1/all?fields=name,flags,population.captial,region');
+        const response = await fetch(' https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region');
         if(!response.ok){
             throw new Error('failed to fetch data');
         }
@@ -14,17 +14,17 @@ async function getCountries(){
     }catch(error){
         console.error(error);
     }
-// this function dislpays the countries and their information onto the page
+// this function display the countries and their information onto the page
 }
 function displayCountries(data){
     data.forEach((country) => {
         countryHtml = `
         <div class="country">
-        <h2 class="country-name">${country.name.commom}</h2>
+        <h2 class="country-name">${country.name.common}</h2>
         <img class="country-flag" src="${country.flags.svg}" />
         <div class="content">
           <h3>Capital</h3>
-          <p>${country.captial}</p>
+          <p>${country.capital}</p>
           <h3>Population</h3>
           <p>${country.population}</p>
           <h3>Region</h3>
