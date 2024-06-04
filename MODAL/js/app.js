@@ -16,10 +16,10 @@ displayCountryModal(country);
 });
 
 function displayCountryModal(country){
-  const modalHTML = `
+  let modalHTML = `
   <h2>${country.name.common}</h2>
   <div class="flag">
-  <img src=${country.flag.svg} alt=${country.flag.alt}/>
+  <img src=${country.flags.svg} alt=${country.flags.alt}/>
   </div>
   <div class="content">
   <h3>Population:</h3>
