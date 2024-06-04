@@ -5,7 +5,7 @@ const closeButton = document.querySelector('.modal-close');
 const container = document.querySelector('.countries');
 
 container.addEventListener('click', (e) => {
-const countryCard = e.target.closest('.countries');
+const countryCard = e.target.closest('.country');
 if(!countryCard) return;
 
 const countryName = countryCard.dataset.name;
